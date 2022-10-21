@@ -6,47 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prandom</title>
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      height: 0;
-      width: 100%;
-      height: 100vh;
-    }
-
-    body {
-      font-family: 'Satoshi', sans-serif;
-      background-color: #232528;
-      color: #fff;
-      display: grid;
-      place-content: center;
-      text-align: center;
-      padding: 5vh 5vw;
-    }
-
-    h1 {
-      font-size: 3em;
-      font-weight: 400;
-    }
-
-    #random-area {
-      min-height: 40vh;
-      text-align: center;
-      font-size: 3em;
-      text-transform: uppercase;
-      font-weight: 900;
-    }
-
-    .accent {
-      /* color: #43beb9; */
-      color: #ff0090;
-    }
-  </style>
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -54,42 +14,8 @@
     <h1>Dove mangiamo a <span class="accent">Prandom</span>?</h1>
     <div id="random-area"></div>
   </div>
-    <script src="restaurant.js"></script>
-  <script language="javascript">
-    //let words = ['Mate', 'Bar Mauro', 'Hollywood', 'New Pilly', 'Pub', 'Marelet', 'Zio Nino', 'Lo Scoglio', 'Usteria', 'Pasta Aurora', 'Carletto', 'burger and co', 'Il Cavallino (bianco)', 'Burger', 'Ninuzzo'];
-
-    function getRandomInt(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    function shuffle(a) {
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    }
-
-    function random(max_random) {
-
-      if (max_random < 0) return;
-
-      random_area.innerHTML = words[Math.floor(Math.random() * words.length)];
-
-      setTimeout(function () {
-        random(--max_random);
-      }, 1000 / 25);
-    }
-
-    words = shuffle(words);
-    const random_area = document.getElementById("random-area")
-    let max_random = getRandomInt(50, 100)
-
-    random(--max_random)
-
-  </script>
+  <script src="restaurant.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
