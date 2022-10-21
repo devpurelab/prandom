@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosa vuoi per prandom?</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 0;
+      width: 100%;
+      height: 100vh;
+    }
+
+    body {
+      font-family: 'Satoshi', sans-serif;
+      background-color: #232528;
+      color: #fff;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      padding: 5vh 5vw;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: 400;
+    }
+
+    #random-area {
+      min-height: 2em;
+      text-align: center;
+      font-size: 4em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .accent {
+      /* color: #43beb9; */
+      color: #ff0090;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Dove mangiamo a <span class="accent">Prandom</span>?</h1>
+    <div id="random-area"></div>
+  </div>
+  <script language="javascript">
+    let words = ['Mate', 'Bar Mauro', 'Hollywood', 'New Pilly', 'Pub', 'Marelet', 'Zio Nino', 'Lo Scoglio', 'Osteria', 'Pasta Aurora', 'Carletto', 'burger and co', 'Il Cavallino (bianco)', 'Burger', 'Ninuzzo'];
+    words = shuffle(words);
+
+    const random_area = document.getElementById("random-area")
+    let max_random = 100
+
+    function shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function random(max_random) {
+
+      if (max_random < 0) {
+        return;
+      }
+
+      random_area.innerHTML = words[Math.floor(Math.random() * words.length)];
+
+      setTimeout(function () {
+        random(--max_random);
+      }, 1000 / 25);
+    }
+
+    random(--max_random)
+
+  </script>
+</body>
+
+</html>
