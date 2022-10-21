@@ -1,17 +1,19 @@
 let words = [
 	'Mate',
 	'Bar Mauro',
-	'Hollywood',
 	'New Pilly',
 	'Pub',
 	'Marelet',
 	'Zio Nino',
 	'Lo Scoglio',
-	'Osteria',
-	'Pasta Aurora',
+	'Usteria',
 	'Carletto',
-	'burger and co',
+	'Mamaburger',
 	'Il Cavallino (bianco)',
 	'Burger',
-	'Ninuzzo'
+	'Ninuzzo',
+	'Haru',
+	'Hugo',
+	'Zeus',
+	'Puglia Hub'
 ];
