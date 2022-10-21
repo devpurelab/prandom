@@ -55,7 +55,7 @@
     <div id="random-area"></div>
   </div>
   <script language="javascript">
-    let WORDS = ['Mate', 'Bar Mauro', 'Hollywood', 'New Pilly', 'Pub', 'Marelet', 'Zio Nino', 'Lo Scoglio', 'Osteria', 'Pasta Aurora', 'Carletto', 'burger and co', 'Il Cavallino (bianco)', 'Burger', 'Ninuzzo'];
+    let words = ['Mate', 'Bar Mauro', 'Hollywood', 'New Pilly', 'Pub', 'Marelet', 'Zio Nino', 'Lo Scoglio', 'Osteria', 'Pasta Aurora', 'Carletto', 'burger and co', 'Il Cavallino (bianco)', 'Burger', 'Ninuzzo'];
 
     function getRandomInt(min, max) {
       min = Math.ceil(min);
@@ -73,9 +73,7 @@
 
     function random(max_random) {
 
-      if (max_random < 0) {
-        return;
-      }
+      if (max_random < 0) return;
 
       random_area.innerHTML = words[Math.floor(Math.random() * words.length)];
 
