@@ -55,11 +55,13 @@
     <div id="random-area"></div>
   </div>
   <script language="javascript">
-    let words = ['Mate', 'Bar Mauro', 'Hollywood', 'New Pilly', 'Pub', 'Marelet', 'Zio Nino', 'Lo Scoglio', 'Osteria', 'Pasta Aurora', 'Carletto', 'burger and co', 'Il Cavallino (bianco)', 'Burger', 'Ninuzzo'];
-    words = shuffle(words);
+    let WORDS = ['Mate', 'Bar Mauro', 'Hollywood', 'New Pilly', 'Pub', 'Marelet', 'Zio Nino', 'Lo Scoglio', 'Osteria', 'Pasta Aurora', 'Carletto', 'burger and co', 'Il Cavallino (bianco)', 'Burger', 'Ninuzzo'];
 
-    const random_area = document.getElementById("random-area")
-    let max_random = 100
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
     function shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
@@ -81,6 +83,10 @@
         random(--max_random);
       }, 1000 / 25);
     }
+
+    words = shuffle(words);
+    const random_area = document.getElementById("random-area")
+    let max_random = getRandomInt(50, 100)
 
     random(--max_random)
 
